@@ -1,49 +1,425 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Al-Dahmen for Exchange</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" href="https://fav.farm/💱">
-  </head>
-  <body class="bg-gray-50 text-gray-800 font-sans">
-    <div id="root" class="min-h-screen flex items-center justify-center">Loading...</div>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Dahmen for Currency Exchange – كربلاء المقدسة</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .hero-bg {
+            background-image: url('https://source.unsplash.com/random/1600x900/?currency-exchange,digital'); /* Placeholder image */
+            background-size: cover;
+            background-position: center;
+        }
+        .section-gradient {
+            background: linear-gradient(to right, #007bff, #0056b3);
+        }
+        .rtl {
+            direction: rtl;
+        }
+        .ltr {
+            direction: ltr;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-gray-100 text-gray-800 rtl">
+    <div class="fixed top-4 left-4 z-50">
+        <button id="lang-toggle" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg">
+            English
+        </button>
+    </div>
 
-    <script type="text/javascript">
-      const { useState } = React;
+    <header class="bg-white shadow-md p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-800" data-lang-key="companyName">
+                Al-Dahmen for Currency Exchange – كربلاء المقدسة
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#home" class="text-gray-600 hover:text-blue-600" data-lang-key="navHome">الرئيسية</a></li>
+                    <li><a href="#about" class="text-gray-600 hover:text-blue-600" data-lang-key="navAbout">عن الشركة</a></li>
+                    <li><a href="#services" class="text-gray-600 hover:text-blue-600" data-lang-key="navServices">خدماتنا</a></li>
+                    <li><a href="#tech" class="text-gray-600 hover:text-blue-600" data-lang-key="navTech">التقنية والابتكار</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-blue-600" data-lang-key="navContact">اتصل بنا</a></li>
+                    <li><a href="/admin-login" class="text-gray-600 hover:text-blue-600" data-lang-key="navAdmin">دخول المسؤول</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-      function App() {
-        const [amount, setAmount] = useState(399750); // Sample amount in IQD
-        const increase = () => setAmount(amount + 5000);
-        const reset = () => setAmount(0);
+    <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center">
+        <div class="bg-black bg-opacity-50 p-8 rounded-lg">
+            <h1 class="text-5xl font-extrabold mb-4" data-lang-key="heroTitle">سريع. موثوق. صرف العملات الرقمي أولاً</h1>
+            <p class="text-xl mb-8" data-lang-key="heroSubtitle">شريكك الموثوق في الخدمات المالية في كربلاء المقدسة</p>
+            <div class="space-x-4">
+                <a href="#services" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnExchangeNow">اصرف الآن</a>
+                <a href="#travel-dollar" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnBookTravelDollars">احجز دولارات السفر</a>
+                <a href="/admin-login" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnLoginPartner">تسجيل الدخول إلى لوحة الشركاء</a>
+            </div>
+            <div class="mt-8 text-lg font-semibold">
+                <span data-lang-key="trustLicensed">مرخصة</span> | 
+                <span data-lang-key="trustExperience">أكثر من 10 سنوات من الخبرة</span> | 
+                <span data-lang-key="trustKarbala">مقرها كربلاء</span>
+            </div>
+        </div>
+    </section>
 
-        return React.createElement(
-          "div",
-          { className: "text-center p-8" },
-          React.createElement("h1", {
-            className: "text-4xl font-extrabold mb-4 text-blue-700"
-          }, "Al-Dahmen for Exchange"),
-          React.createElement("p", {
-            className: "text-xl text-gray-700 mb-6"
-          }, "💰 Balance: " + amount.toLocaleString("en-IQ") + " IQD"),
-          React.createElement("div", { className: "flex justify-center gap-4 mt-4" },
-            React.createElement("button", {
-              onClick: increase,
-              className: "bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition"
-            }, "➕ Add 5,000"),
-            React.createElement("button", {
-              onClick: reset,
-              className: "bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-            }, "🔁 Reset")
-          )
-        );
-      }
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="aboutTitle">عن الشركة</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="aboutStoryMission">قصتنا ورسالتنا</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4" data-lang-key="aboutStoryMissionText">
+                        شركة الضامن للصرافة هي مزود خدمة مالية موثوق به مقرها في كربلاء، العراق، تقدم خدمات صرف عملات سريعة وآمنة ومرخصة للأفراد والشركات والمسافرين. بالإضافة إلى خدماتنا الأساسية، قمنا ببناء مجموعة برامج مالية مخصصة مصممة خصيصًا لشركات الصرافة في العراق والمنطقة — منصة تحول رقمي تعمل على أتمتة العمليات اليومية، وتضمن الامتثال، وتحسن تجربة العملاء.
+                    </p>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="aboutRegulatoryCompliance">الامتثال التنظيمي والترخيص</h3>
+                    <p class="text-gray-700 leading-relaxed mb-4" data-lang-key="aboutRegulatoryComplianceText">
+                        نحن ملتزمون بأعلى معايير الشفافية والامتثال. جميع عملياتنا مرخصة بالكامل وتتبع لوائح المصرف المركزي العراقي، مما يضمن راحة بالك وأمان معاملاتك.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="aboutBranchInfo">معلومات الفرع</h3>
+                    <p class="text-gray-700 mb-4" data-lang-key="aboutBranchAddress">العراق، كربلاء المقدسة، [العنوان الدقيق للفرع]</p>
+                    <div class="w-full h-80 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13481.082006322046!2d44.020358899999995!3d32.6105825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fd525381f185ef3%3A0xc49b74051a660a0a!2sKarbala%2C%20Karbala%20Governorate%2C%20Iraq!5e0!3m2!1sen!2sus!4w100!4w100!4f13.1!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </section>
 
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(React.createElement(App));
+    <section id="services" class="py-16 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="servicesTitle">خدماتنا</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-exchange-alt text-6xl text-blue-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceCurrencyExchangeTitle">صرف العملات</h3>
+                    <p class="text-gray-700 mb-2" data-lang-key="serviceCurrencyExchangeCurrencies">الدولار الأمريكي، اليورو، الجنيه الإسترليني، والمزيد</p>
+                    <p class="text-gray-700" data-lang-key="serviceCurrencyExchangeRates">أسعار شفافة، لا توجد رسوم خفية</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-credit-card text-6xl text-blue-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceCardLoadingTitle">شحن البطاقات والتحويلات المالية</h3>
+                    <p class="text-gray-700 mb-2" data-lang-key="serviceCardLoadingRemittance">ويسترن يونيون، موني جرام، تحويلات دولية</p>
+                </div>
+                <div id="travel-dollar" class="bg-white p-8 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-plane-departure text-6xl text-blue-600 mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceTravelDollarTitle">نظام حجز دولارات السفر</h3>
+                    <p class="text-gray-700 mb-4" data-lang-key="serviceTravelDollarDescription">نموذج عبر الإنترنت للعملاء لحجز المواعيد وتحميل جوازات السفر / التذاكر</p>
+                    <p class="text-gray-700" data-lang-key="serviceTravelDollarConfirmation">تأكيد تلقائي مع إشعار واتساب</p>
+                    <button class="mt-6 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnBookNow">احجز الآن</button>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-blue-100 p-10 rounded-lg shadow-xl">
+                <h3 class="text-3xl font-bold text-center text-blue-800 mb-8" data-lang-key="softwareSolutionsTitle">حلول البرمجيات لشركات الصرافة</h3>
+                <p class="text-xl text-gray-700 text-center mb-10" data-lang-key="softwareSolutionsSubtitle">برنامج مخصص مصمم خصيصًا لمكاتب الصرافة العراقية المحلية</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fas fa-calendar-check text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureBookingTitle">نظام حجز العملاء الآلي</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureBookingDescription">قم بتبسيط عملية حجز العملاء باستخدام نظامنا التلقائي والفعال.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fas fa-tasks text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureWorkflowTitle">إدارة سير عمل دولارات السفر</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureWorkflowDescription">إدارة كل خطوة من عملية حجز دولارات السفر بسلاسة.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fas fa-upload text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureFileUploadTitle">تحميل آمن للملفات</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureFileUploadDescription">قم بتحميل المستندات الهامة (جواز السفر، التذكرة) بأمان.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fas fa-tachometer-alt text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureAdminDashboardTitle">لوحة تحكم المسؤول</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureAdminDashboardDescription">لوحة تحكم قوية للموافقة على الحجوزات أو رفضها.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fab fa-whatsapp text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureNotificationsTitle">تكامل الإشعارات</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureNotificationsDescription">تكامل إشعارات واتساب أو تيليجرام للاتصال الفوري.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md flex items-start space-x-4">
+                        <i class="fas fa-code text-4xl text-blue-600 mt-1"></i>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2" data-lang-key="softwareFeatureDeploymentTitle">سهولة النشر</h4>
+                            <p class="text-gray-700" data-lang-key="softwareFeatureDeploymentDescription">يمكن نشره في أي فرع بأقل قدر من التدريب.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="py-16 bg-white section-gradient text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6" data-lang-key="techTitle">التقنية والابتكار</h2>
+            <p class="text-xl mb-10" data-lang-key="techSubtitle">
+                نحن لسنا مجرد شركة صرافة — نحن نبني مستقبل الصرافة الرقمية في العراق.
+            </p>
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="techDashboardPreview">معاينة لوحة تحكم المسؤول</h3>
+                    <img src="https://via.placeholder.com/800x500?text=Admin+Dashboard+Screenshot" alt="Admin Dashboard Screenshot" class="rounded-lg shadow-xl mx-auto">
+                    <p class="text-gray-200 mt-4" data-lang-key="techDashboardDescription">نظرة على لوحة تحكم المسؤول البديهية لإدارة طلبات العملاء بكفاءة.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="techBookingFormPreview">معاينة نموذج الحجز</h3>
+                    <img src="https://via.placeholder.com/800x500?text=Booking+Form+Screenshot" alt="Booking Form Screenshot" class="rounded-lg shadow-xl mx-auto">
+                    <p class="text-gray-200 mt-4" data-lang-key="techBookingFormDescription">سهولة الاستخدام والتصميم النظيف لنموذج حجز العملاء.</p>
+                </div>
+            </div>
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4" data-lang-key="techPWADemoTitle">عرض توضيحي للتطبيق التقدمي عبر الويب (PWA)</h3>
+                <p class="text-lg mb-4" data-lang-key="techPWADemoDescription">جرب تطبيقنا التقدمي عبر الويب (PWA) المتوافق مع الجوّال والذي يوفر تجربة سلسة.</p>
+                <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnViewPWADemo">مشاهدة العرض التوضيحي (قريبًا)</a>
+            </div>
+            <h3 class="text-3xl font-bold mb-6" data-lang-key="techPartnerInvitationTitle">ادعاء للشراكة معنا</h3>
+            <p class="text-xl mb-8" data-lang-key="techPartnerInvitationText">
+                هل أنت شركة صرافة أخرى تتطلع إلى رقمنة عملياتك؟
+                <br>نقدم حلول برامجنا المخصصة لشركاء جدد.
+            </p>
+            <a href="#contact" class="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="btnPartnerWithUs">شراكة معنا</a>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="contactTitle">اتصل بنا</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="contactInfoTitle">معلومات الاتصال</h3>
+                    <p class="text-gray-700 text-lg mb-3"><i class="fab fa-whatsapp text-green-500 mr-2"></i> <span data-lang-key="contactWhatsApp">واتساب:</span> <a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-blue-600 hover:underline">YOUR_PHONE_NUMBER</a></p>
+                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> <span data-lang-key="contactPhone">الهاتف:</span> <a href="tel:YOUR_PHONE_NUMBER" class="text-blue-600 hover:underline">YOUR_PHONE_NUMBER</a></p>
+                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-envelope text-red-500 mr-2"></i> <span data-lang-key="contactEmail">البريد الإلكتروني:</span> <a href="mailto:info@aldahmen.com" class="text-blue-600 hover:underline">info@aldahmen.com</a></p>
+                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-clock text-gray-500 mr-2"></i> <span data-lang-key="contactWorkingHours">ساعات العمل:</span> [ساعات العمل الخاصة بك]</p>
+                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-map-marker-alt text-purple-500 mr-2"></i> <span data-lang-key="contactAddress">العنوان:</span> العراق، كربلاء المقدسة، [العنوان الدقيق للفرع]</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6" data-lang-key="contactInquiryForm">نموذج الاستفسار</h3>
+                    <form>
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="formName">الاسم:</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="formEmail">البريد الإلكتروني:</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2" data-lang-key="formMessage">الرسالة:</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full text-lg shadow-lg transition duration-300" data-lang-key="formSubmit">إرسال الاستفسار</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-blue-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 <span data-lang-key="footerCopyright">شركة الضامن للصرافة. جميع الحقوق محفوظة.</span></p>
+            <p class="text-sm mt-2" data-lang-key="footerPoweredBy">بواسطة: حلول برمجياتنا المخصصة</p>
+        </div>
+    </footer>
+
+    <script>
+        const langToggle = document.getElementById('lang-toggle');
+        const body = document.body;
+        let currentLang = 'ar'; // Default language is Arabic
+
+        const translations = {
+            'ar': {
+                companyName: 'Al-Dahmen for Currency Exchange – كربلاء المقدسة',
+                navHome: 'الرئيسية',
+                navAbout: 'عن الشركة',
+                navServices: 'خدماتنا',
+                navTech: 'التقنية والابتكار',
+                navContact: 'اتصل بنا',
+                navAdmin: 'دخول المسؤول',
+                heroTitle: 'سريع. موثوق. صرف العملات الرقمي أولاً',
+                heroSubtitle: 'شريكك الموثوق في الخدمات المالية في كربلاء المقدسة',
+                btnExchangeNow: 'اصرف الآن',
+                btnBookTravelDollars: 'احجز دولارات السفر',
+                btnLoginPartner: 'تسجيل الدخول إلى لوحة الشركاء',
+                trustLicensed: 'مرخصة',
+                trustExperience: 'أكثر من 10 سنوات من الخبرة',
+                trustKarbala: 'مقرها كربلاء',
+                aboutTitle: 'عن الشركة',
+                aboutStoryMission: 'قصتنا ورسالتنا',
+                aboutStoryMissionText: 'شركة الضامن للصرافة هي مزود خدمة مالية موثوق به مقرها في كربلاء، العراق، تقدم خدمات صرف عملات سريعة وآمنة ومرخصة للأفراد والشركات والمسافرين. بالإضافة إلى خدماتنا الأساسية، قمنا ببناء مجموعة برامج مالية مخصصة مصممة خصيصًا لشركات الصرافة في العراق والمنطقة — منصة تحول رقمي تعمل على أتمتة العمليات اليومية، وتضمن الامتثال، وتحسن تجربة العملاء.',
+                aboutRegulatoryCompliance: 'الامتثال التنظيمي والترخيص',
+                aboutRegulatoryComplianceText: 'نحن ملتزمون بأعلى معايير الشفافية والامتثال. جميع عملياتنا مرخصة بالكامل وتتبع لوائح المصرف المركزي العراقي، مما يضمن راحة بالك وأمان معاملاتك.',
+                aboutBranchInfo: 'معلومات الفرع',
+                aboutBranchAddress: 'العراق، كربلاء المقدسة، [العنوان الدقيق للفرع]',
+                servicesTitle: 'خدماتنا',
+                serviceCurrencyExchangeTitle: 'صرف العملات',
+                serviceCurrencyExchangeCurrencies: 'الدولار الأمريكي، اليورو، الجنيه الإسترليني، والمزيد',
+                serviceCurrencyExchangeRates: 'أسعار شفافة، لا توجد رسوم خفية',
+                serviceCardLoadingTitle: 'شحن البطاقات والتحويلات المالية',
+                serviceCardLoadingRemittance: 'ويسترن يونيون، موني جرام، تحويلات دولية',
+                serviceTravelDollarTitle: 'نظام حجز دولارات السفر',
+                serviceTravelDollarDescription: 'نموذج عبر الإنترنت للعملاء لحجز المواعيد وتحميل جوازات السفر / التذاكر',
+                serviceTravelDollarConfirmation: 'تأكيد تلقائي مع إشعار واتساب',
+                btnBookNow: 'احجز الآن',
+                softwareSolutionsTitle: 'حلول البرمجيات لشركات الصرافة',
+                softwareSolutionsSubtitle: 'برنامج مخصص مصمم خصيصًا لمكاتب الصرافة العراقية المحلية',
+                softwareFeatureBookingTitle: 'نظام حجز العملاء الآلي',
+                softwareFeatureBookingDescription: 'قم بتبسيط عملية حجز العملاء باستخدام نظامنا التلقائي والفعال.',
+                softwareFeatureWorkflowTitle: 'إدارة سير عمل دولارات السفر',
+                softwareFeatureWorkflowDescription: 'إدارة كل خطوة من عملية حجز دولارات السفر بسلاسة.',
+                softwareFeatureFileUploadTitle: 'تحميل آمن للملفات',
+                softwareFeatureFileUploadDescription: 'قم بتحميل المستندات الهامة (جواز السفر، التذكرة) بأمان.',
+                softwareFeatureAdminDashboardTitle: 'لوحة تحكم المسؤول',
+                softwareFeatureAdminDashboardDescription: 'لوحة تحكم قوية للموافقة على الحجوزات أو رفضها.',
+                softwareFeatureNotificationsTitle: 'تكامل الإشعارات',
+                softwareFeatureNotificationsDescription: 'تكامل إشعارات واتساب أو تيليجرام للاتصال الفوري.',
+                softwareFeatureDeploymentTitle: 'سهولة النشر',
+                softwareFeatureDeploymentDescription: 'يمكن نشره في أي فرع بأقل قدر من التدريب.',
+                techTitle: 'التقنية والابتكار',
+                techSubtitle: 'نحن لسنا مجرد شركة صرافة — نحن نبني مستقبل الصرافة الرقمية في العراق.',
+                techDashboardPreview: 'معاينة لوحة تحكم المسؤول',
+                techDashboardDescription: 'نظرة على لوحة تحكم المسؤول البديهية لإدارة طلبات العملاء بكفاءة.',
+                techBookingFormPreview: 'معاينة نموذج الحجز',
+                techBookingFormDescription: 'سهولة الاستخدام والتصميم النظيف لنموذج حجز العملاء.',
+                techPWADemoTitle: 'عرض توضيحي للتطبيق التقدمي عبر الويب (PWA)',
+                techPWADemoDescription: 'جرب تطبيقنا التقدمي عبر الويب (PWA) المتوافق مع الجوّال والذي يوفر تجربة سلسة.',
+                btnViewPWADemo: 'مشاهدة العرض التوضيحي (قريبًا)',
+                techPartnerInvitationTitle: 'ادعاء للشراكة معنا',
+                techPartnerInvitationText: 'هل أنت شركة صرافة أخرى تتطلع إلى رقمنة عملياتك؟<br>نقدم حلول برامجنا المخصصة لشركاء جدد.',
+                btnPartnerWithUs: 'شراكة معنا',
+                contactTitle: 'اتصل بنا',
+                contactInfoTitle: 'معلومات الاتصال',
+                contactWhatsApp: 'واتساب:',
+                contactPhone: 'الهاتف:',
+                contactEmail: 'البريد الإلكتروني:',
+                contactWorkingHours: 'ساعات العمل:',
+                contactAddress: 'العنوان:',
+                contactInquiryForm: 'نموذج الاستفسار',
+                formName: 'الاسم:',
+                formEmail: 'البريد الإلكتروني:',
+                formMessage: 'الرسالة:',
+                formSubmit: 'إرسال الاستفسار',
+                footerCopyright: 'شركة الضامن للصرافة. جميع الحقوق محفوظة.',
+                footerPoweredBy: 'بواسطة: حلول برمجياتنا المخصصة'
+            },
+            'en': {
+                companyName: 'Al-Dahmen for Currency Exchange – Karbala, Iraq',
+                navHome: 'Home',
+                navAbout: 'About Us',
+                navServices: 'Our Services',
+                navTech: 'Tech & Innovation',
+                navContact: 'Contact Us',
+                navAdmin: 'Admin Login',
+                heroTitle: 'Fast. Reliable. Digital-first Currency Exchange',
+                heroSubtitle: 'Your Trusted Financial Services Partner in Holy Karbala',
+                btnExchangeNow: 'Exchange Now',
+                btnBookTravelDollars: 'Book Travel Dollars',
+                btnLoginPartner: 'Login to Partner Dashboard',
+                trustLicensed: 'Licensed',
+                trustExperience: '10+ Years of Experience',
+                trustKarbala: 'Karbala-based',
+                aboutTitle: 'About Us',
+                aboutStoryMission: 'Our Story and Mission',
+                aboutStoryMissionText: 'Al-Dahmen for Exchange is a trusted financial service provider based in Karbala, Iraq, offering fast, secure, and licensed currency exchange services for individuals, businesses, and travelers. In addition to our core services, we have built a custom fintech software suite tailored specifically for exchange companies in Iraq and the region — a digital transformation platform that automates daily operations, ensures compliance, and improves customer experience.',
+                aboutRegulatoryCompliance: 'Regulatory Compliance and Licensing',
+                aboutRegulatoryComplianceText: 'We are committed to the highest standards of transparency and compliance. All our operations are fully licensed and follow the regulations of the Central Bank of Iraq, ensuring your peace of mind and secure transactions.',
+                aboutBranchInfo: 'Branch Information',
+                aboutBranchAddress: 'Iraq, Holy Karbala, [Your Exact Branch Address]',
+                servicesTitle: 'Our Services',
+                serviceCurrencyExchangeTitle: 'Currency Exchange',
+                serviceCurrencyExchangeCurrencies: 'USD, EUR, GBP, and more',
+                serviceCurrencyExchangeRates: 'Transparent rates, no hidden fees',
+                serviceCardLoadingTitle: 'Card Loading & Remittance',
+                serviceCardLoadingRemittance: 'Western Union, MoneyGram, international transfers',
+                serviceTravelDollarTitle: 'Travel Dollar Booking System',
+                serviceTravelDollarDescription: 'Online form for customers to book appointments and upload passport/ticket',
+                serviceTravelDollarConfirmation: 'Auto confirmation with WhatsApp notification',
+                btnBookNow: 'Book Now',
+                softwareSolutionsTitle: 'Software Solutions for Exchange Companies',
+                softwareSolutionsSubtitle: 'Custom-built software tailored for local Iraqi exchange offices',
+                softwareFeatureBookingTitle: 'Automated Customer Booking System',
+                softwareFeatureBookingDescription: 'Streamline customer booking with our automated and efficient system.',
+                softwareFeatureWorkflowTitle: 'Travel Dollar Workflow Management',
+                softwareFeatureWorkflowDescription: 'Manage every step of the travel dollar booking process seamlessly.',
+                softwareFeatureFileUploadTitle: 'Secure File Upload',
+                softwareFeatureFileUploadDescription: 'Securely upload important documents (passport, ticket).',
+                softwareFeatureAdminDashboardTitle: 'Admin Dashboard',
+                softwareFeatureAdminDashboardDescription: 'Powerful admin dashboard to approve/reject bookings.',
+                softwareFeatureNotificationsTitle: 'Notification Integration',
+                softwareFeatureNotificationsDescription: 'WhatsApp or Telegram notification integration for instant communication.',
+                softwareFeatureDeploymentTitle: 'Easy Deployment',
+                softwareFeatureDeploymentDescription: 'Can be deployed on any branch with minimal training.',
+                techTitle: 'Tech & Innovation',
+                techSubtitle: 'We are not just an exchange company — we are building the future of digital exchange in Iraq.',
+                techDashboardPreview: 'Admin Dashboard Preview',
+                techDashboardDescription: 'A glimpse into our intuitive admin dashboard for efficient customer request management.',
+                techBookingFormPreview: 'Booking Form Preview',
+                techBookingFormDescription: 'User-friendly interface and clean design for the customer booking form.',
+                techPWADemoTitle: 'Progressive Web App (PWA) Demo',
+                techPWADemoDescription: 'Experience our mobile-friendly Progressive Web App (PWA) that offers a seamless experience.',
+                btnViewPWADemo: 'View Demo (Coming Soon)',
+                techPartnerInvitationTitle: 'Invitation to Partner with Us',
+                techPartnerInvitationText: 'Are you another exchange company looking to digitize your operations?<br>We offer our custom software solutions to new partners.',
+                btnPartnerWithUs: 'Partner With Us',
+                contactTitle: 'Contact Us',
+                contactInfoTitle: 'Contact Information',
+                contactWhatsApp: 'WhatsApp:',
+                contactPhone: 'Phone:',
+                contactEmail: 'Email:',
+                contactWorkingHours: 'Working Hours:',
+                contactAddress: 'Address:',
+                contactInquiryForm: 'Inquiry Form',
+                formName: 'Name:',
+                formEmail: 'Email:',
+                formMessage: 'Message:',
+                formSubmit: 'Send Inquiry',
+                footerCopyright: 'Al-Dahmen for Currency Exchange. All Rights Reserved.',
+                footerPoweredBy: 'Powered by: Our Custom Software Solutions'
+            }
+        };
+
+        function updateContent(lang) {
+            document.querySelectorAll('[data-lang-key]').forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (translations[lang][key]) {
+                    element.innerHTML = translations[lang][key];
+                }
+            });
+
+            if (lang === 'ar') {
+                body.classList.add('rtl');
+                body.classList.remove('ltr');
+                langToggle.textContent = 'English';
+            } else {
+                body.classList.add('ltr');
+                body.classList.remove('rtl');
+                langToggle.textContent = 'العربية';
+            }
+        }
+
+        langToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            updateContent(currentLang);
+        });
+
+        // Initial content load
+        updateContent(currentLang);
     </script>
-  </body>
+</body>
 </html>
