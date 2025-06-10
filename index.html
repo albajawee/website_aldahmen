@@ -24,12 +24,14 @@
     </style>
 </head>
 <body class="font-sans antialiased bg-gray-100 text-gray-800 rtl">
+    <!-- Language Toggle -->
     <div class="fixed top-4 left-4 z-50">
         <button id="lang-toggle" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full shadow-lg">
             English
         </button>
     </div>
 
+    <!-- Header -->
     <header class="bg-white shadow-md p-4">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold text-blue-800" data-lang-key="companyName">
@@ -48,6 +50,9 @@
         </div>
     </header>
 
+    ---
+
+    <!-- Home Page -->
     <section id="home" class="hero-bg h-screen flex items-center justify-center text-white text-center">
         <div class="bg-black bg-opacity-50 p-8 rounded-lg">
             <h1 class="text-5xl font-extrabold mb-4" data-lang-key="heroTitle">سريع. موثوق. صرف العملات الرقمي أولاً</h1>
@@ -67,6 +72,7 @@
 
     ---
 
+    <!-- About Us -->
     <section id="about" class="py-16 bg-white">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="aboutTitle">عن الشركة</h2>
@@ -85,30 +91,35 @@
                     <h3 class="text-2xl font-semibold mb-4" data-lang-key="aboutBranchInfo">معلومات الفرع</h3>
                     <p class="text-gray-700 mb-4" data-lang-key="aboutBranchAddress">العراق، كربلاء المقدسة، [العنوان الدقيق للفرع]</p>
                     <div class="w-full h-80 bg-gray-300 rounded-lg overflow-hidden shadow-lg">
+                        <!-- Replace with actual Google Maps embed for Karbala Holy City -->
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13488.225586616016!2d44.02701540321262!3d32.610574046416245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fd45a6c11b0e3f7%3A0x6734c26417f73967!2sKarbala%20Holy%20City!5e0!3m2!1sen!2siq!4v1717961011681!5m2!1sen!2siq" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     ---
 
+    <!-- Our Services -->
     <section id="services" class="py-16 bg-blue-50">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="servicesTitle">خدماتنا</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Currency Exchange -->
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
                     <i class="fas fa-exchange-alt text-6xl text-blue-600 mb-4"></i>
                     <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceCurrencyExchangeTitle">صرف العملات</h3>
                     <p class="text-gray-700 mb-2" data-lang-key="serviceCurrencyExchangeCurrencies">الدولار الأمريكي، اليورو، الجنيه الإسترليني، والمزيد</p>
                     <p class="text-gray-700" data-lang-key="serviceCurrencyExchangeRates">أسعار شفافة، لا توجد رسوم خفية</p>
                 </div>
+                <!-- Card Loading & Remittance -->
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
                     <i class="fas fa-credit-card text-6xl text-blue-600 mb-4"></i>
                     <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceCardLoadingTitle">شحن البطاقات والتحويلات المالية</h3>
                     <p class="text-gray-700 mb-2" data-lang-key="serviceCardLoadingRemittance">ويسترن يونيون، موني جرام، تحويلات دولية</p>
                 </div>
+                <!-- Travel Dollar Booking System -->
                 <div id="travel-dollar" class="bg-white p-8 rounded-lg shadow-lg text-center">
                     <i class="fas fa-plane-departure text-6xl text-blue-600 mb-4"></i>
                     <h3 class="text-2xl font-semibold mb-3" data-lang-key="serviceTravelDollarTitle">نظام حجز دولارات السفر</h3>
@@ -118,6 +129,7 @@
                 </div>
             </div>
 
+            <!-- Software Solutions for Exchange Companies -->
             <div class="mt-16 bg-blue-100 p-10 rounded-lg shadow-xl">
                 <h3 class="text-3xl font-bold text-center text-blue-800 mb-8" data-lang-key="softwareSolutionsTitle">حلول البرمجيات لشركات الصرافة</h3>
                 <p class="text-xl text-gray-700 text-center mb-10" data-lang-key="softwareSolutionsSubtitle">برنامج مخصص مصمم خصيصًا لمكاتب الصرافة العراقية المحلية</p>
@@ -171,6 +183,7 @@
 
     ---
 
+    <!-- Tech & Innovation Page -->
     <section id="tech" class="py-16 bg-white section-gradient text-white">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold mb-6" data-lang-key="techTitle">التقنية والابتكار</h2>
@@ -205,15 +218,14 @@
 
     ---
 
+    <!-- Contact Page -->
     <section id="contact" class="py-16 bg-gray-100">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center text-blue-800 mb-10" data-lang-key="contactTitle">اتصل بنا</h2>
             <div class="grid md:grid-cols-2 gap-12">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="contactInfoTitle">للاستفسارات، اتصل بنا:</h3>
+                    <h3 class="text-2xl font-semibold mb-4" data-lang-key="contactInfoTitle">للتواصل المباشر:</h3>
                     <p class="text-gray-700 text-lg mb-3"><i class="fas fa-phone-alt text-blue-500 mr-2"></i> <span data-lang-key="contactPhone">الهاتف:</span> <a href="tel:07801483777" class="text-blue-600 hover:underline">07801483777</a></p>
-                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-clock text-gray-500 mr-2"></i> <span data-lang-key="contactWorkingHours">ساعات العمل:</span> [ساعات العمل الخاصة بك]</p>
-                    <p class="text-gray-700 text-lg mb-3"><i class="fas fa-map-marker-alt text-purple-500 mr-2"></i> <span data-lang-key="contactAddress">العنوان:</span> العراق، كربلاء المقدسة، [العنوان الدقيق للفرع]</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg">
                     <h3 class="text-2xl font-semibold mb-6" data-lang-key="contactInquiryForm">نموذج الاستفسار</h3>
@@ -239,9 +251,10 @@
 
     ---
 
+    <!-- Footer -->
     <footer class="bg-blue-800 text-white py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>© 2024 <span data-lang-key="footerCopyright">شركة الضامن للصرافة. جميع الحقوق محفوظة.</span></p>
+            <p>&copy; 2024 <span data-lang-key="footerCopyright">شركة الضامن للصرافة. جميع الحقوق محفوظة.</span></p>
             <p class="text-sm mt-2" data-lang-key="footerPoweredBy">بواسطة: حلول برمجياتنا المخصصة</p>
         </div>
     </footer>
@@ -312,10 +325,8 @@
                 techPartnerInvitationText: 'هل أنت شركة صرافة أخرى تتطلع إلى رقمنة عملياتك؟<br>نقدم حلول برامجنا المخصصة لشركاء جدد.',
                 btnPartnerWithUs: 'شراكة معنا',
                 contactTitle: 'اتصل بنا',
-                contactInfoTitle: 'للاستفسارات، اتصل بنا:',
+                contactInfoTitle: 'للتواصل المباشر:',
                 contactPhone: 'الهاتف:',
-                contactWorkingHours: 'ساعات العمل:',
-                contactAddress: 'العنوان:',
                 contactInquiryForm: 'نموذج الاستفسار',
                 formName: 'الاسم:',
                 formEmail: 'البريد الإلكتروني:',
@@ -384,10 +395,8 @@
                 techPartnerInvitationText: 'Are you another exchange company looking to digitize your operations?<br>We offer our custom software solutions to new partners.',
                 btnPartnerWithUs: 'Partner With Us',
                 contactTitle: 'Contact Us',
-                contactInfoTitle: 'For inquiries, call us:',
+                contactInfoTitle: 'Direct Contact:',
                 contactPhone: 'Phone:',
-                contactWorkingHours: 'Working Hours:',
-                contactAddress: 'Address:',
                 contactInquiryForm: 'Inquiry Form',
                 formName: 'Name:',
                 formEmail: 'Email:',
